@@ -5,8 +5,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :password
       t.string :salt
-      t.boolean :admin
-      t.boolean :actived
+      t.boolean :admin,                        :default =>false
+      t.boolean :actived,                      :default => false
 
       t.timestamps
     end

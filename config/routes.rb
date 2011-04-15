@@ -1,11 +1,19 @@
+#encoding: utf-8
+#修改记录
+#2011-04-15 添加active和resetpassword的路由
 Snail::Application.routes.draw do
-  get "pages/home"
-
-  get "pages/about"
-
-  get "pages/help"
-
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+
+
+  root :to => "pages#home"
+  match '/active/:auth_code', :to => 'users#active_account'
+  match '/resetpassword/:auth_code', :to => 'user#reset_password'
+  match '/signin', :to => "sessions#new"
+  match '/signup', :to => 'users#new'
+  match '/aboutus' , :to => "pages#about"
+  match '/help', :to => "pages#help"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
