@@ -1,22 +1,24 @@
-<div class='left'>
+<div class='col col_4'>
   <% form_for(:session, :url => sessions_path) do |f| %>
+    <field_set class="s_column">
     <%= render 'shared/error_messages', :object => f.object %>
     <div class="field">
-      <%= f.label :email %><br/>
+      <br/>
+      <%= f.label :email,"邮箱:" %><br/>
       <%= f.text_field :email %>
     </div>
     <div class="field">
-      <%= f.label :password %><br/>
+      <%= f.label :password,"密码:" %><br/>
       <%= f.password_field :password %>
     </div>
-    <div class="actions center">
-      <%= f.submit "登  录" %>
-    </div>
-  <% end  %>
-  <p class="center"><%= link_to '立即注册','#' %>&nbsp;&nbsp;<%= link_to '忘记密码?','#' %></p>
+      <%= f.submit "登  录" %>&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to '立即注册','#' %>&nbsp;&nbsp;<%= link_to '忘记密码?','#' %>
+    </field_set>
+  </div>
+<% end  %>
  </div>
 
 
- <div class="right">
+ <div class="col col_12">
    <%= image_tag('bottom.png') %>
  </div>

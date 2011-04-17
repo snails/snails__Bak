@@ -1,6 +1,7 @@
 #encoding: utf-8
 #修改记录
-#2011-04-15 添加active和resetpassword的路由
+#2011-04-15 添加active和resetpassword的路由,/active也可以使用map.connect 'users/active/:auth_code',:controller => "users"
+#:action => 'active_account'
 Snail::Application.routes.draw do
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]

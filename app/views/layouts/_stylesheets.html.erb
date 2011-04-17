@@ -1,11 +1,23 @@
 <!--[if lt IE 9]>
-  <%= javascript_include_tag 'html5.js' %>
+<%= javascript_include_tag 'html5' %>
 <![endif]-->
+<!-- Normal Include JS Files -->
+<%= javascript_include_tag 'modernizr' %>
+<%= javascript_include_tag 'jquery' %>
 <!-- Normal Include CSS Files -->
-<%= stylesheet_link_tag 'easy.css',:media => 'screen' %>
-<%= stylesheet_link_tag 'easyprint.css', :media => 'print' %>
-<%= stylesheet_link_tag 'custom',:media => 'screen' %>
-<%= javascript_include_tag 'jquery.js' %>
-<!--[if lt IE 8 ]>
-<![endif]-->
-
+<%= stylesheet_link_tag 'reset',:media => 'screen' %>
+<%= stylesheet_link_tag 'css3', :media => 'screen' %>
+<%= stylesheet_link_tag 'general',:media => 'screen' %>
+<%= stylesheet_link_tag 'grid', :media => 'screen' %>
+<%= stylesheet_link_tag 'forms', :media => 'screen' %>
+<!-- Self-define CSS Style -->
+<style>
+  header .logo {height: 40px;float: left;width: 120px;}
+  header {padding-top: 5px; border-bottom: 1px solid #ccc; padding-bottom: 20px;}
+  nav ul li {float: left; margin-top: 12px;}
+  nav ul li a {display: block; padding: 5px 15px; border-right: 1px solid #eee; font-size: 1.2em; text-decoration: none;}
+  nav ul li a:hover {background: #eee; border-right: 1px solid #ccc; text-shadow: -1px -1px 0px #fff;}
+  footer {text-align: center; color; #666; font-size: 0.9em; padding: 4px 6px;}
+  footer ul li a{ font-size: 1em; color:blue;}
+  form {height: 500px; background: #eee;}
+</style>
